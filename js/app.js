@@ -1,3 +1,3 @@
-const a= 2
-const b = 3
+const a= 5
+const b = 7
 let c = a+b
