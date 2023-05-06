@@ -1,22 +1,60 @@
 <html>
-    <head>
-        <title>js01</title>
-    </head>
-    <body>
-        <table border="1">
+
+<head>
+    <title>js01</title>
+</head>
+
+<body>
+    <table border="1">
         <script language="JavaScript">
-            for(i=1;i<=8;i++) {
-                document.write("<tr height=\"50\">");
-                for(j=1;j<=8;j++) {
-                    color = "#000000";
-                    if ((i+j) % 2 == 0) {
-                        color="#FFFFFF";
-                    }
-                    document.write("<td bgcolor=\"" + color + "\" width=\"50\"></td>");
-                }
-                document.write("</tr>");
+            // Створення елементу таблиці
+            var table = document.createElement('table');
+
+            // Створення рядка заголовка
+            var headerRow = document.createElement('tr');
+
+            // Створення комірки заголовка
+            var headerCell = document.createElement('th');
+            headerCell.textContent = 'Це пробний текст';
+
+            // Додавання комірки заголовка до рядка заголовка
+            headerRow.appendChild(headerCell);
+
+            // Додавання стовпців
+            for (var i = 1; i <= 4; i++) {
+                // Створення комірки стовпця
+                var columnCell = document.createElement('th');
+                columnCell.textContent = i;
+
+                // Додавання комірки стовпця до рядка заголовка
+                headerRow.appendChild(columnCell);
             }
+
+            // Додавання рядка заголовка до таблиці
+            table.appendChild(headerRow);
+
+            // Додавання рядків
+            var rowsData = [3, 2, 1];
+            for (var i = 0; i < rowsData.length; i++) {
+                // Створення нового рядка
+                var row = document.createElement('tr');
+
+                // Створення комірки рядка
+                var rowCell = document.createElement('td');
+                rowCell.textContent = rowsData[i];
+
+                // Додавання комірки рядка до рядка
+                row.appendChild(rowCell);
+
+                // Додавання рядка до таблиці
+                table.appendChild(row);
+            }
+
+            // Додавання таблиці до DOM
+            document.body.appendChild(table);
+
         </script>
-        </table>
-    </body>
+    </table>
+</body>
+
 </html>
